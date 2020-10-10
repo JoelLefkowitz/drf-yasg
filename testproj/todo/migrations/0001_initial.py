@@ -9,46 +9,116 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Pack',
+            name="Pack",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('size_code', models.DecimalField(choices=[(Decimal('50'), '5x10'), (Decimal('100'), '10x10'), (Decimal('200'), '10x20')], decimal_places=3, default=Decimal('200'), max_digits=7)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "size_code",
+                    models.DecimalField(
+                        choices=[
+                            (Decimal("50"), "5x10"),
+                            (Decimal("100"), "10x10"),
+                            (Decimal("200"), "10x20"),
+                        ],
+                        decimal_places=3,
+                        default=Decimal("200"),
+                        max_digits=7,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Todo',
+            name="Todo",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50)),
             ],
         ),
         migrations.CreateModel(
-            name='TodoAnother',
+            name="TodoAnother",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
-                ('todo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo.todo')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50)),
+                (
+                    "todo",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="todo.todo"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='TodoYetAnother',
+            name="TodoYetAnother",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
-                ('todo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todo.todoanother')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50)),
+                (
+                    "todo",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="todo.todoanother",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='TodoTree',
+            name="TodoTree",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
-                ('parent', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='children', to='todo.todotree')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50)),
+                (
+                    "parent",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="children",
+                        to="todo.todotree",
+                    ),
+                ),
             ],
         ),
     ]

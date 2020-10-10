@@ -16,29 +16,114 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ArticleGroup',
+            name="ArticleGroup",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('uuid', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
-                ('title', models.CharField(help_text='title model help_text', max_length=255, unique=True)),
-                ('slug', models.SlugField(blank=True, help_text='slug model help_text', unique=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "uuid",
+                    models.UUIDField(default=uuid.uuid4, editable=False, unique=True),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        help_text="title model help_text", max_length=255, unique=True
+                    ),
+                ),
+                (
+                    "slug",
+                    models.SlugField(
+                        blank=True, help_text="slug model help_text", unique=True
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Article',
+            name="Article",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(help_text='title model help_text', max_length=255, unique=True)),
-                ('body', models.TextField(help_text='article model help_text', max_length=5000)),
-                ('slug', models.SlugField(blank=True, help_text='slug model help_text', unique=True)),
-                ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('date_modified', models.DateTimeField(auto_now=True)),
-                ('article_type', models.PositiveSmallIntegerField(choices=[(1, 'first'), (2, 'second'), (3, 'third'), (7, 'seven'), (8, 'eight')], help_text='IntegerField declared on model with choices=(...) and exposed via ModelSerializer', null=True)),
-                ('cover', models.ImageField(blank=True, upload_to='article/original/')),
-                ('read_only_nullable', models.CharField(blank=True, max_length=20, null=True)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='articles', to=settings.AUTH_USER_MODEL)),
-                ('group', models.ForeignKey(blank=True, default=None, on_delete=django.db.models.deletion.PROTECT, related_name='articles_as_main', to='articles.articlegroup')),
-                ('original_group', models.ForeignKey(blank=True, default=None, on_delete=django.db.models.deletion.PROTECT, related_name='articles_as_original', to='articles.articlegroup')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        help_text="title model help_text", max_length=255, unique=True
+                    ),
+                ),
+                (
+                    "body",
+                    models.TextField(
+                        help_text="article model help_text", max_length=5000
+                    ),
+                ),
+                (
+                    "slug",
+                    models.SlugField(
+                        blank=True, help_text="slug model help_text", unique=True
+                    ),
+                ),
+                ("date_created", models.DateTimeField(auto_now_add=True)),
+                ("date_modified", models.DateTimeField(auto_now=True)),
+                (
+                    "article_type",
+                    models.PositiveSmallIntegerField(
+                        choices=[
+                            (1, "first"),
+                            (2, "second"),
+                            (3, "third"),
+                            (7, "seven"),
+                            (8, "eight"),
+                        ],
+                        help_text="IntegerField declared on model with choices=(...) and exposed via ModelSerializer",
+                        null=True,
+                    ),
+                ),
+                ("cover", models.ImageField(blank=True, upload_to="article/original/")),
+                (
+                    "read_only_nullable",
+                    models.CharField(blank=True, max_length=20, null=True),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="articles",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
+                (
+                    "group",
+                    models.ForeignKey(
+                        blank=True,
+                        default=None,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="articles_as_main",
+                        to="articles.articlegroup",
+                    ),
+                ),
+                (
+                    "original_group",
+                    models.ForeignKey(
+                        blank=True,
+                        default=None,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="articles_as_original",
+                        to="articles.articlegroup",
+                    ),
+                ),
             ],
         ),
     ]
