@@ -1,22 +1,15 @@
 import user_agents
-from django.conf.urls import include, url
+from django.conf.urls import url
 from django.contrib import admin
 from django.shortcuts import redirect
+from django.urls import include
 from rest_framework import permissions
 from rest_framework.decorators import api_view
 
 from drf_yasg2 import openapi
 from drf_yasg2.views import get_schema_view
 
-from django.urls import path, include
-from django.contrib.auth.models import User, Group
-from django.contrib import admin
 admin.autodiscover()
-
-from rest_framework import generics, permissions, serializers
-
-from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
-
 
 swagger_info = openapi.Info(
     title="Snippets API",

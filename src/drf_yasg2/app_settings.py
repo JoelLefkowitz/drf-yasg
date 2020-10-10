@@ -92,7 +92,6 @@ IMPORT_STRINGS = [
 ]
 
 
-
 class AppSettings(object):
     """
     Stolen from Django Rest Framework, removed caching for easier testing

@@ -1,13 +1,9 @@
 from decimal import Decimal
-
-import rest_framework
 from django.contrib.auth import get_user_model
 from django.core.validators import MaxLengthValidator, MinValueValidator
-from packaging.version import Version
 from rest_framework import serializers
 
 from snippets.models import LANGUAGE_CHOICES, STYLE_CHOICES, Snippet, SnippetViewer
-
 
 
 class LanguageSerializer(serializers.Serializer):

@@ -2,16 +2,11 @@ from django.conf import settings
 from django.views.generic import View
 
 try:
-    from django.urls import (  # noqa
-        URLPattern,
-        URLResolver,
-    )
+    from django.urls import URLPattern, URLResolver  # noqa
 except ImportError:
     # Will be removed in Django 2.0
-    from django.urls import (  # noqa
-        RegexURLPattern as URLPattern,
-        RegexURLResolver as URLResolver,
-    )
+    from django.urls import RegexURLPattern as URLPattern  # noqa
+    from django.urls import RegexURLResolver as URLResolver
 
 
 def get_original_route(urlpattern):
@@ -66,11 +61,15 @@ def unicode_http_header(value):
     if isinstance(value, bytes):
         return value.decode('iso-8859-1')
     return value
+
+
 def distinct(queryset, base):
     if settings.DATABASES[queryset.db]["ENGINE"] == "django.db.backends.oracle":
         # distinct analogue for Oracle users
         return base.filter(pk__in=set(queryset.values_list('pk', flat=True)))
     return queryset.distinct()
+
+
 # django.contrib.postgres requires psycopg2
 try:
     from django.contrib.postgres import fields as postgres_fields
@@ -109,6 +108,7 @@ try:
     import markdown
     HEADERID_EXT_PATH = 'markdown.extensions.toc'
     LEVEL_PARAM = 'baselevel'
+
     def apply_markdown(text):
         """
         Simple wrapper around :func:`markdown.markdown` to set the base level
@@ -130,30 +130,37 @@ except ImportError:
     markdown = None
 try:
     import pygments
-    from pygments.lexers import get_lexer_by_name, TextLexer
     from pygments.formatters import HtmlFormatter
+    from pygments.lexers import TextLexer, get_lexer_by_name
+
     def pygments_highlight(text, lang, style):
         lexer = get_lexer_by_name(lang, stripall=False)
         formatter = HtmlFormatter(nowrap=True, style=style)
         return pygments.highlight(text, lexer, formatter)
+
     def pygments_css(style):
         formatter = HtmlFormatter(style=style)
         return formatter.get_style_defs('.highlight')
 except ImportError:
     pygments = None
+
     def pygments_highlight(text, lang, style):
         return text
+
     def pygments_css(style):
         return None
 if markdown is not None and pygments is not None:
     # starting from this blogpost and modified to support current markdown extensions API
     # https://zerokspot.com/weblog/2008/06/18/syntax-highlighting-in-markdown-with-pygments/
-    from markdown.preprocessors import Preprocessor
     import re
+
+    from markdown.preprocessors import Preprocessor
+
     class CodeBlockPreprocessor(Preprocessor):
         pattern = re.compile(
             r'^\s*``` *([^\n]+)\n(.+?)^\s*```', re.M | re.S)
         formatter = HtmlFormatter()
+
         def run(self, lines):
             def repl(m):
                 try:
@@ -166,6 +173,7 @@ if markdown is not None and pygments is not None:
                 return '\n\n%s\n\n' % code
             ret = self.pattern.sub(repl, "\n".join(lines))
             return ret.split("\n")
+
     def md_filter_add_syntax_highlight(md):
         md.preprocessors.register(CodeBlockPreprocessor(), 'highlight', 40)
         return True

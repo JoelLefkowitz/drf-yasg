@@ -1,11 +1,11 @@
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.urls import reverse_lazy
 
 from testproj.util import static_lazy
 
-import sys
 sys.path.append(os.path.join(os.getcwd(), "src"))
 print(sys.path)
 

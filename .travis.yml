@@ -29,7 +29,6 @@ matrix:
         tags: true
       distributions: sdist bdist_wheel
   allow_failures:
-  - env: TOXENV=lint
   - env: TOXENV=djmaster
   fast_finish: true
 install:
