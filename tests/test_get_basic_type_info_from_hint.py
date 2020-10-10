@@ -32,7 +32,8 @@ if typing:
         }),
         # Following cases are not 100% correct, but it should work somehow and not crash.
         (Union[int, float], None),
-        (List, {'type': openapi.TYPE_ARRAY, 'items': openapi.Items(openapi.TYPE_STRING)}),
+        # This test will fail in Python 3.9+ if List is used.
+        (list, {'type': openapi.TYPE_ARRAY, 'items': openapi.Items(openapi.TYPE_STRING)}),
         ('SomeType', None),
         (type('SomeType', (object,), {}), None),
         (None, None),
