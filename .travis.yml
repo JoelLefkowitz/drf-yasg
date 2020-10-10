@@ -5,7 +5,7 @@ jobs:
       os: linux
       python: 3.6
       install:
-        - pip install -r requirements/lint.txt
+        - pip3 install -r requirements/lint.txt
 
     - stage: unittest
       script: tox
@@ -18,14 +18,14 @@ jobs:
       - 3.7
       - 3.8
       install:
-        - pip install -r requirements/test.txt
+        - pip3 install -r requirements/test.txt
 
     - stage: check-docs
       os: linux
       python: 3.6
       script: twine check .tox/dist/*
       install:
-        - pip install -r requirements/docs.txt
+        - pip3 install -r requirements/docs.txt
 
     # Check readthedocs will be able to build the docs after publishing
     - stage: test-docs
@@ -33,7 +33,7 @@ jobs:
       os: linux
       python: 3.6
       install:
-        - pip install -r requirements/docs.txt
+        - pip3 install -r requirements/docs.txt
 
     - stage: publish
       provider: pypi
@@ -47,4 +47,4 @@ jobs:
         branch: master
         tags: true
       install:
-        - pip install -r requirements/publish.txt
+        - pip3 install -r requirements/publish.txt
