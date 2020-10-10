@@ -12,11 +12,11 @@ from rest_framework import routers, serializers, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from drf_yasg import codecs, openapi
-from drf_yasg.codecs import yaml_sane_load
-from drf_yasg.errors import SwaggerGenerationError
-from drf_yasg.generators import OpenAPISchemaGenerator
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg2 import codecs, openapi
+from drf_yasg2.codecs import yaml_sane_load
+from drf_yasg2.errors import SwaggerGenerationError
+from drf_yasg2.generators import OpenAPISchemaGenerator
+from drf_yasg2.utils import swagger_auto_schema
 
 try:
     import typing

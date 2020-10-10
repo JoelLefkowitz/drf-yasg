@@ -2,8 +2,8 @@ import uuid
 
 import pytest
 
-from drf_yasg import openapi
-from drf_yasg.inspectors.field import get_basic_type_info_from_hint
+from drf_yasg2 import openapi
+from drf_yasg2.inspectors.field import get_basic_type_info_from_hint
 
 try:
     import typing

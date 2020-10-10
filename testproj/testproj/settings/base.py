@@ -5,6 +5,10 @@ from django.urls import reverse_lazy
 
 from testproj.util import static_lazy
 
+import sys
+sys.path.append(os.path.join(os.getcwd(), "src"))
+print(sys.path)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 ALLOWED_HOSTS = [
@@ -24,10 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'oauth2_provider',
     'corsheaders',
-
-    'drf_yasg',
+    'drf_yasg2',
     'snippets',
     'users',
     'articles',
@@ -44,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'drf_yasg.middleware.SwaggerExceptionMiddleware',
+    'drf_yasg2.middleware.SwaggerExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'testproj.urls'
@@ -89,6 +93,9 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
     )
 }
 
@@ -143,8 +150,8 @@ SWAGGER_SETTINGS = {
     },
     "DEFAULT_PAGINATOR_INSPECTORS": [
         'testproj.inspectors.UnknownPaginatorInspector',
-        'drf_yasg.inspectors.DjangoRestResponsePagination',
-        'drf_yasg.inspectors.CoreAPICompatInspector',
+        'drf_yasg2.inspectors.DjangoRestResponsePagination',
+        'drf_yasg2.inspectors.CoreAPICompatInspector',
     ]
 }
 
@@ -187,7 +194,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'drf_yasg': {
+        'drf_yasg2': {
             'handlers': ['console_log'],
             'level': 'DEBUG',
             'propagate': False,

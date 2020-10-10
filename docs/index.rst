@@ -31,4 +31,4 @@ Source code documentation
 .. toctree::
    :maxdepth: 2
 
-   drf_yasg.rst
+   drf_yasg2.rst

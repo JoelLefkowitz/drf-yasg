@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from drf_yasg import renderers
+from drf_yasg2 import renderers
 
 
 def _check_swagger_setting(swagger, setting, expected):

@@ -1,6 +1,6 @@
 import pytest
 
-from drf_yasg.codecs import yaml_sane_load
+from drf_yasg2.codecs import yaml_sane_load
 
 
 def _get_versioned_schema(prefix, client, validate_schema):

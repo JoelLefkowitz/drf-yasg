@@ -2,7 +2,7 @@ from rest_framework import mixins, permissions, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import RetrieveAPIView
 
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg2.utils import swagger_auto_schema
 
 from .models import Pack, Todo, TodoAnother, TodoTree, TodoYetAnother
 from .serializer import (
