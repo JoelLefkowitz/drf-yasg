@@ -10,10 +10,10 @@ from rest_framework.response import Response
 
 from articles import serializers
 from articles.models import Article
-from drf_yasg import openapi
-from drf_yasg.app_settings import swagger_settings
-from drf_yasg.inspectors import CoreAPICompatInspector, FieldInspector, NotHandled, SwaggerAutoSchema
-from drf_yasg.utils import no_body, swagger_auto_schema
+from drf_yasg2 import openapi
+from drf_yasg2.app_settings import swagger_settings
+from drf_yasg2.inspectors import CoreAPICompatInspector, FieldInspector, NotHandled, SwaggerAutoSchema
+from drf_yasg2.utils import no_body, swagger_auto_schema
 
 
 class DjangoFilterDescriptionInspector(CoreAPICompatInspector):

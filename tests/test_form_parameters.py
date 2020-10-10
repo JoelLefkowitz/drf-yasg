@@ -4,10 +4,10 @@ from django.utils.decorators import method_decorator
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 
-from drf_yasg import openapi
-from drf_yasg.errors import SwaggerGenerationError
-from drf_yasg.generators import OpenAPISchemaGenerator
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg2 import openapi
+from drf_yasg2.errors import SwaggerGenerationError
+from drf_yasg2.generators import OpenAPISchemaGenerator
+from drf_yasg2.utils import swagger_auto_schema
 
 
 def test_no_form_parameters_with_non_form_parsers():

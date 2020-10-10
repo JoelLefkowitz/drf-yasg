@@ -6,9 +6,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.parsers import FileUploadParser, FormParser
 
-from drf_yasg import openapi
-from drf_yasg.inspectors import SwaggerAutoSchema
-from drf_yasg.utils import swagger_auto_schema
+from drf_yasg2 import openapi
+from drf_yasg2.inspectors import SwaggerAutoSchema
+from drf_yasg2.utils import swagger_auto_schema
 from snippets.models import Snippet, SnippetViewer
 from snippets.serializers import SnippetSerializer, SnippetViewerSerializer
 

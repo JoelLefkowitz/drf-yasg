@@ -45,7 +45,7 @@ some properties of the generated :class:`.Operation`. For example, in a ``ViewSe
 
 .. code-block:: python
 
-   from drf_yasg.utils import swagger_auto_schema
+   from drf_yasg2.utils import swagger_auto_schema
 
    @swagger_auto_schema(operation_description="partial_update description override", responses={404: 'slug not found'})
    def partial_update(self, request, *args, **kwargs):
@@ -168,7 +168,7 @@ Schema generation of ``serializers.SerializerMethodField`` is supported in two w
 
    .. code-block:: python
 
-      from drf_yasg.utils import swagger_serializer_method
+      from drf_yasg2.utils import swagger_serializer_method
 
       class OtherStuffSerializer(serializers.Serializer):
           foo = serializers.CharField()

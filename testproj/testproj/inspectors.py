@@ -1,5 +1,5 @@
-from drf_yasg import openapi
-from drf_yasg.inspectors import NotHandled, PaginatorInspector
+from drf_yasg2 import openapi
+from drf_yasg2.inspectors import NotHandled, PaginatorInspector
 
 
 class UnknownPaginatorInspector(PaginatorInspector):

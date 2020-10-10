@@ -72,7 +72,7 @@ You want to contribute some code? Great! Here are a few steps to get you started
       (venv) $ pytest -n auto --cov
       # (optional) sort imports with isort and check flake8 linting
       (venv) $ isort --apply
-      (venv) $ flake8 src/drf_yasg testproj tests setup.py
+      (venv) $ flake8 src/drf_yasg2 testproj tests setup.py
       # (optional) run tests for other python versions in separate environments
       (venv) $ tox
 

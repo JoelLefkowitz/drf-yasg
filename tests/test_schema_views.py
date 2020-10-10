@@ -3,7 +3,7 @@ from collections import OrderedDict
 
 import pytest
 
-from drf_yasg.codecs import yaml_sane_load
+from drf_yasg2.codecs import yaml_sane_load
 
 
 def _validate_text_schema_view(client, validate_schema, path, loader):
@@ -44,6 +44,7 @@ def test_swagger_ui(client, validate_schema):
 
 
 def test_redoc(client, validate_schema):
+    
     _validate_ui_schema_view(client, '/redoc/', 'redoc/redoc.min.js')
     _validate_text_schema_view(client, validate_schema, '/redoc/?format=openapi', json.loads)
 

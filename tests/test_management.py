@@ -7,9 +7,9 @@ from collections import OrderedDict
 
 import pytest
 
-from drf_yasg import openapi
-from drf_yasg.codecs import yaml_sane_load
-from drf_yasg.generators import OpenAPISchemaGenerator
+from drf_yasg2 import openapi
+from drf_yasg2.codecs import yaml_sane_load
+from drf_yasg2.generators import OpenAPISchemaGenerator
 
 
 def test_reference_schema(call_generate_swagger, db, reference_schema):
