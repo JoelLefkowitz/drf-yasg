@@ -36,7 +36,7 @@ through a deprecation cycle of a few minor releases.
 
 Resources:
 
-* **Source**: https://github.com/axnsan12/drf-yasg2/
+* **Source**: https://github.com/JoelLefkowitz/drf-yasg
 * **Documentation**: https://drf-yasg2.readthedocs.io/
 * **Changelog**: https://drf-yasg2.readthedocs.io/en/stable/changelog.html
 * **Live demo**: https://drf-yasg2-demo.herokuapp.com/
@@ -60,21 +60,21 @@ Features
 - supports Django REST Framework API versioning with ``URLPathVersioning`` and ``NamespaceVersioning``; other DRF
   or custom versioning schemes are not currently supported
 
-.. figure:: https://raw.githubusercontent.com/axnsan12/drf-yasg2/1.0.2/screenshots/redoc-nested-response.png
+.. figure:: https://raw.githubusercontent.com/JoelLefkowitz/drf-yasg/1.0.2/screenshots/redoc-nested-response.png
    :width: 100%
    :figwidth: image
    :alt: redoc screenshot
 
    **Fully nested request and response schemas.**
 
-.. figure:: https://raw.githubusercontent.com/axnsan12/drf-yasg2/1.0.2/screenshots/swagger-ui-list.png
+.. figure:: https://raw.githubusercontent.com/JoelLefkowitz/drf-yasg/1.0.2/screenshots/swagger-ui-list.png
    :width: 100%
    :figwidth: image
    :alt: swagger-ui screenshot
 
    **Choose between redoc and swagger-ui.**
 
-.. figure:: https://raw.githubusercontent.com/axnsan12/drf-yasg2/1.0.2/screenshots/swagger-ui-models.png
+.. figure:: https://raw.githubusercontent.com/JoelLefkowitz/drf-yasg/1.0.2/screenshots/swagger-ui-models.png
    :width: 100%
    :figwidth: image
    :alt: model definitions screenshot
@@ -96,7 +96,7 @@ Usage
 0. Installation
 ===============
 
-The preferred instalation method is directly from pypi:
+The preferred installation method is directly from pypi:
 
 .. code:: console
 
@@ -304,7 +304,7 @@ For additional usage examples, you can take a look at the test project in the ``
 
 .. code:: console
 
-   $ git clone https://github.com/axnsan12/drf-yasg2.git
+   $ git clone https://github.com/JoelLefkowitz/drf-yasg.git
    $ cd drf-yasg2
    $ virtualenv venv
    $ source venv/bin/activate
@@ -332,12 +332,12 @@ djangorestframework-recursive
 Integration with `djangorestframework-recursive <https://github.com/heywbj/django-rest-framework-recursive>`_ is
 provided out of the box - if you have ``djangorestframework-recursive`` installed.
 
-.. |travis| image:: https://img.shields.io/travis/axnsan12/drf-yasg2/master.svg
-   :target: https://travis-ci.org/axnsan12/drf-yasg2
+.. |travis| image:: https://img.shields.io/travis/JoelLefkowitz/drf-yasg/master.svg
+   :target: https://travis-ci.org/JoelLefkowitz/drf-yasg
    :alt: Travis CI
 
-.. |codecov| image:: https://img.shields.io/codecov/c/github/axnsan12/drf-yasg2/master.svg
-   :target: https://codecov.io/gh/axnsan12/drf-yasg2
+.. |codecov| image:: https://img.shields.io/codecov/c/github/JoelLefkowitz/drf-yasg/master.svg
+   :target: https://codecov.io/gh/JoelLefkowitz/drf-yasg
    :alt: Codecov
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/drf-yasg2.svg
@@ -348,16 +348,14 @@ provided out of the box - if you have ``djangorestframework-recursive`` installe
    :target: https://drf-yasg2.readthedocs.io/
    :alt: ReadTheDocs
 
-.. |bmac-button| image:: https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png
-   :target: https://www.buymeacoffee.com/cvijdea
-   :alt: Buy Me A Coffee
-
 .. |heroku-button| image:: https://www.herokucdn.com/deploy/button.svg
-   :target: https://heroku.com/deploy?template=https://github.com/axnsan12/drf-yasg2
+   :target: https://heroku.com/deploy?template=https://github.com/JoelLefkowitz/drf-yasg
    :alt: Heroku deploy button
 
 .. |nbsp| unicode:: 0xA0
    :trim:
+
+=======
 
 drf-extra-fields
 ===============================
