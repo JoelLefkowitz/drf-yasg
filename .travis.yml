@@ -24,6 +24,8 @@ jobs:
     # Check readthedocs will be able to build the docs after publishing
     - stage: test-docs
       script: sphinx-build -WnEa -b html docs docs/_build/html
+      install:
+        - pip install -r requirements/docs.txt
 
     - stage: publish
       provider: pypi
@@ -34,6 +36,8 @@ jobs:
       on:
         branch: master
         tags: true
+      install:
+        - pip install -r requirements/publish.txt
 
 # Set the default environment for linting and publishing
 os: linux
