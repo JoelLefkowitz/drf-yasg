@@ -47,7 +47,7 @@ author = 'Cristi V.'
 # built documents.
 
 # The full version, including alpha/beta/rc tags.
-release = get_distribution('drf_yasg').version
+release = get_distribution('drf_yasg2').version
 if 'noscm' in release:
     raise AssertionError('Invalid package version string: %s. \n'
                          'The documentation must be built with drf_yasg2 installed from a distribution package, '
@@ -321,4 +321,4 @@ roles.register_local_role('ghuser', role_github_user)
 
 
 def setup(app):
-    app.add_stylesheet('css/style.css')
+    app.add_css_file('css/style.css')
