@@ -2,6 +2,8 @@ jobs:
   include:
     - stage: lint
       script: flake8 src/drf_yasg2 testproj tests setup.py
+      os: linux
+      python: 3.6
       install:
         - pip install -r requirements/lint.txt
 
@@ -19,16 +21,24 @@ jobs:
         - pip install -r requirements/test.txt
 
     - stage: check-docs
+      os: linux
+      python: 3.6
       script: twine check .tox/dist/*
+      install:
+        - pip install -r requirements/docs.txt
 
     # Check readthedocs will be able to build the docs after publishing
     - stage: test-docs
       script: sphinx-build -WnEa -b html docs docs/_build/html
+      os: linux
+      python: 3.6
       install:
         - pip install -r requirements/docs.txt
 
     - stage: publish
       provider: pypi
+      os: linux
+      python: 3.6
       distributions: "sdist bdist_wheel"
       user: joellefkowitz
       password:
@@ -38,8 +48,3 @@ jobs:
         tags: true
       install:
         - pip install -r requirements/publish.txt
-
-# Set the default environment for linting and publishing
-os: linux
-python: 3.6
-cache: pip
