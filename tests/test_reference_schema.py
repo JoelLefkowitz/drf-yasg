@@ -1,9 +1,9 @@
 import json
 from collections import OrderedDict
 
-from drf_yasg import openapi
-from drf_yasg.generators import OpenAPISchemaGenerator
-from drf_yasg.inspectors import FieldInspector, FilterInspector, PaginatorInspector, SerializerInspector
+from drf_yasg2 import openapi
+from drf_yasg2.generators import OpenAPISchemaGenerator
+from drf_yasg2.inspectors import FieldInspector, FilterInspector, PaginatorInspector, SerializerInspector
 
 
 def test_reference_schema(swagger_dict, reference_schema, compare_schemas):
@@ -27,7 +27,7 @@ class NoOpPaginatorInspector(PaginatorInspector):
 
 
 def test_noop_inspectors(swagger_settings, mock_schema_request, codec_json, reference_schema, compare_schemas):
-    from drf_yasg import app_settings
+    from drf_yasg2 import app_settings
 
     def set_inspectors(inspectors, setting_name):
         inspectors = [__name__ + '.' + inspector.__name__ for inspector in inspectors]

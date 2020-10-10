@@ -12,9 +12,21 @@ from django.core.management import call_command
 from rest_framework.test import APIRequestFactory
 from rest_framework.views import APIView
 
-from drf_yasg import codecs, openapi
-from drf_yasg.codecs import yaml_sane_dump, yaml_sane_load
-from drf_yasg.generators import OpenAPISchemaGenerator
+from drf_yasg2 import codecs, openapi
+from drf_yasg2.codecs import yaml_sane_dump, yaml_sane_load
+from drf_yasg2.generators import OpenAPISchemaGenerator
+
+
+import pytest
+
+from django.core.management import call_command
+from django.contrib.auth.models import User
+
+
+@pytest.fixture(scope='session')
+def django_db_setup(django_db_setup, django_db_blocker):
+    with django_db_blocker.unblock():
+        User.objects.create(username="admin", password="adminuser")
 
 
 @pytest.fixture

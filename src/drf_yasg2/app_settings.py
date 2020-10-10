@@ -2,29 +2,29 @@ from django.conf import settings
 from rest_framework.settings import perform_import
 
 SWAGGER_DEFAULTS = {
-    'DEFAULT_GENERATOR_CLASS': 'drf_yasg.generators.OpenAPISchemaGenerator',
-    'DEFAULT_AUTO_SCHEMA_CLASS': 'drf_yasg.inspectors.SwaggerAutoSchema',
+    'DEFAULT_GENERATOR_CLASS': 'drf_yasg2.generators.OpenAPISchemaGenerator',
+    'DEFAULT_AUTO_SCHEMA_CLASS': 'drf_yasg2.inspectors.SwaggerAutoSchema',
 
     'DEFAULT_FIELD_INSPECTORS': [
-        'drf_yasg.inspectors.CamelCaseJSONFilter',
-        'drf_yasg.inspectors.RecursiveFieldInspector',
-        'drf_yasg.inspectors.ReferencingSerializerInspector',
-        'drf_yasg.inspectors.ChoiceFieldInspector',
-        'drf_yasg.inspectors.FileFieldInspector',
-        'drf_yasg.inspectors.DictFieldInspector',
-        'drf_yasg.inspectors.JSONFieldInspector',
-        'drf_yasg.inspectors.HiddenFieldInspector',
-        'drf_yasg.inspectors.RelatedFieldInspector',
-        'drf_yasg.inspectors.SerializerMethodFieldInspector',
-        'drf_yasg.inspectors.SimpleFieldInspector',
-        'drf_yasg.inspectors.StringDefaultFieldInspector',
+        'drf_yasg2.inspectors.CamelCaseJSONFilter',
+        'drf_yasg2.inspectors.RecursiveFieldInspector',
+        'drf_yasg2.inspectors.ReferencingSerializerInspector',
+        'drf_yasg2.inspectors.ChoiceFieldInspector',
+        'drf_yasg2.inspectors.FileFieldInspector',
+        'drf_yasg2.inspectors.DictFieldInspector',
+        'drf_yasg2.inspectors.JSONFieldInspector',
+        'drf_yasg2.inspectors.HiddenFieldInspector',
+        'drf_yasg2.inspectors.RelatedFieldInspector',
+        'drf_yasg2.inspectors.SerializerMethodFieldInspector',
+        'drf_yasg2.inspectors.SimpleFieldInspector',
+        'drf_yasg2.inspectors.StringDefaultFieldInspector',
     ],
     'DEFAULT_FILTER_INSPECTORS': [
-        'drf_yasg.inspectors.CoreAPICompatInspector',
+        'drf_yasg2.inspectors.CoreAPICompatInspector',
     ],
     'DEFAULT_PAGINATOR_INSPECTORS': [
-        'drf_yasg.inspectors.DjangoRestResponsePagination',
-        'drf_yasg.inspectors.CoreAPICompatInspector',
+        'drf_yasg2.inspectors.DjangoRestResponsePagination',
+        'drf_yasg2.inspectors.CoreAPICompatInspector',
     ],
 
     'EXCLUDED_MEDIA_TYPES': ['html'],
@@ -90,6 +90,7 @@ IMPORT_STRINGS = [
     'DEFAULT_PAGINATOR_INSPECTORS',
     'DEFAULT_INFO',
 ]
+
 
 
 class AppSettings(object):
