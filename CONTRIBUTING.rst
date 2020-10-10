@@ -95,7 +95,7 @@ You want to contribute some code? Great! Here are a few steps to get you started
 
 #. **Your code must pass all the required travis jobs before it is merged**
 
-   As of now, this consists of running on Python 2.7, 3.6, 3.7, 3.8, and 3.9 and building the docs successfully.
+   As of now, this consists of running on Python 3.6, 3.7, 3.8, and 3.9 and building the docs successfully.
 
 ******************
 Maintainer's notes
