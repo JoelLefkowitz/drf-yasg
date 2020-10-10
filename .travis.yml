@@ -9,18 +9,13 @@ jobs:
 
     - stage: unittest
       script: tox
-      matrix:
-        python:
-          - 3.6
-          - 3.7
-          - 3.8
-        env:
-          - TOXENV=stable
-          - TOXENV=latest
-
-      allow_failures:
-        - env: TOXENV=latest
-
+      python:
+        - 3.6
+        - 3.7
+        - 3.8
+      env:
+        - TOXENV=stable
+        - TOXENV=latest
       install:
         - pip install -r requirements/test.txt
 
@@ -34,6 +29,9 @@ jobs:
       script: sphinx-build -WnEa -b html docs docs/_build/html
       install:
         - pip install -r requirements/docs.txt
+
+  allow_failures:
+    - env: TOXENV=latest
 
 before_deploy: "pip install -r requirements/publish.txt"
 
