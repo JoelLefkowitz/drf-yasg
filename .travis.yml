@@ -1,5 +1,13 @@
 language: python
-python: 3.6
+
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+
+env:
+  - TOXENV=stable
+  - TOXENV=latest
 
 jobs:
   include:
@@ -10,14 +18,6 @@ jobs:
 
     - stage: unittest
       script: tox
-      os:
-      - linux
-      - osx
-      - windows
-      python:
-      - 3.6
-      - 3.7
-      - 3.8
       install:
         - pip install -r requirements/test.txt
 
@@ -32,6 +32,11 @@ jobs:
       install:
         - pip install -r requirements/docs.txt
 
+  allow_failures:
+    - env: TOXENV=latest
+
+before_deploy: "pip install -r requirements/publish.txt"
+
 deploy:
   provider: pypi
   distributions: "sdist bdist_wheel"
@@ -41,5 +46,3 @@ deploy:
   on:
     branch: master
     tags: true
-  before_install:
-    - pip install -r requirements/publish.txt
