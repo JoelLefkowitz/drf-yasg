@@ -19,15 +19,13 @@ with io.open('README.rst', encoding='utf-8') as readme:
 requirements = read_req('base.txt')
 requirements_validation = read_req('validation.txt')
 
-py3_supported_range = (5, 8)
+py3_supported_range = (6, 9)
 
 # convert inclusive range to exclusive range
 py3_supported_range = (py3_supported_range[0], py3_supported_range[1] + 1)
-python_requires = ", ".join([">=2.7"] + ["!=3.{}.*".format(v) for v in range(0, py3_supported_range[0])])
+python_requires = ", ".join(["!=3.{}.*".format(v) for v in range(0, py3_supported_range[0])])
 python_classifiers = [
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
 ] + ['Programming Language :: Python :: 3.{}'.format(v) for v in range(*py3_supported_range)]
 
