@@ -30,7 +30,7 @@ if __name__ == "__main__":
             ],
             "tests": [
                 "dj-database-url>=0.4.2",
-                "django-cors-headers>=3.5.0",
+                "django-cors-headers>=3.0.2",
                 "django-filter>=1.1.0",
                 "django-oauth-toolkit>=1.3.2",
                 "djangorestframework-camel-case>=1.0.3",
