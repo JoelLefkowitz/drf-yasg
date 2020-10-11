@@ -15,9 +15,10 @@ Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framew
 
 | Release | Python     | Django    | Django REST Framework |
 |:-------:|:----------:|:---------:|:---------------------:|
-| 1.18.x  | 2.7 - 3.8  | 2.2 - 3.0 | 3.8 - 3.12            |
-| 1.19.x  | 3.6 - 3.9  | 2.2 - 3.0 | 3.10 - 3.12           |
-| 1.20.x  | 3.6+       | 2.2+      | 3.10+                 |
+| 1.18.x  | 2.7        | 1.11      | 3.8 - 3.9             |
+| 1.18.x  | 3.6 - 3.8  | 2.2 - 3.0 | 3.8 - 3.12            |
+| 1.19.x  | 3.6 - 3.9  | 2.2 - 3.0 | 3.8 - 3.12            |
+
 
 ## Features
 
