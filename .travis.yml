@@ -32,7 +32,7 @@ jobs:
 
     # This ensures that readthedocs will be able to build the docs
     - stage: test-docs
-      script: scripts/docs.sh && scripts/test-docs.sh 
+      script: scripts/docs.sh
       install:
         - pip install .[docs]
 
