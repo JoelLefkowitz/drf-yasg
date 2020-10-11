@@ -3,7 +3,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = drf-yasg2
+SPHINXPROJ    = drf_yasg2
 SOURCEDIR     = .
 BUILDDIR      = _build
 

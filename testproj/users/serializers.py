@@ -44,7 +44,7 @@ class UserSerializerrr(serializers.ModelSerializer):
         """
         method_field that uses a serializer internally.
 
-        By using the decorator, we can tell drf-yasg2 how to represent this in Swagger
+        By using the decorator, we can tell drf_yasg2 how to represent this in Swagger
         :param obj:
         :return:
         """

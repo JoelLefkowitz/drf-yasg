@@ -10,7 +10,7 @@ if __name__ == "__main__":
             "coreapi>=2.3.3",
             "coreschema>=0.0.4",
             "django>=2.2.0",
-            "djangorestframework>=3.10.0",
+            "djangorestframework>=3.8.0",
             "inflection>=0.5.1",
             "ruamel.yaml>=0.16.12",
             "six>=1.15.0",

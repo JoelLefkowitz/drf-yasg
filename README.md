@@ -60,7 +60,7 @@ pip install drf_yasg2
 
 ### Usage
 
-Checkout the [live demo!](https://drf-yasg2-demo.herokuapp.com/)
+Checkout the [live demo!](https://drf_yasg2-demo.herokuapp.com/)
 
 Add the package to INSTALLED_APPS:
 
@@ -113,7 +113,7 @@ This exposes 4 endpoints:
 
 ### Docs
 
-Additional details are available in the [full documentation](https://drf_yasg2.readthedocs.io/en/latest/) and the [changelog](https://drf-yasg2.readthedocs.io/en/stable/changelog.html).
+Additional details are available in the [full documentation](https://drf_yasg2.readthedocs.io/en/latest/) and the [changelog](https://drf_yasg2.readthedocs.io/en/stable/changelog.html).
 
 To generate the documentation locally:
 
@@ -139,7 +139,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ### Authors
 
-This project forked from [drf-yasg](https://github.com/axnsan12/drf-yasg).
+This project forked from [drf-yasg](https://github.com/joellefkowitz/drf-yasg).
 Credit is given to [Cristi Vîjdea](https://github.com/axnsan12) and the original contributors.
 
 * **Cristi Vîjdea** - _Initial work_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
