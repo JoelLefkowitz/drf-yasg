@@ -1,5 +1,3 @@
-from six import binary_type, raise_from, text_type
-
 import copy
 import json
 import logging
@@ -7,6 +5,7 @@ from collections import OrderedDict
 
 from coreapi.compat import force_bytes
 from ruamel import yaml
+from six import binary_type, raise_from, text_type
 
 from . import openapi
 from .errors import SwaggerValidationError
