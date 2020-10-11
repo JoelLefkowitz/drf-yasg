@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ev
+
 npm update
 
 cp node_modules/redoc/bundles/redoc.standalone.js src/drf_yasg/static/drf-yasg2/redoc/redoc.min.js
