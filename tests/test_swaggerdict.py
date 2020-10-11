@@ -1,5 +1,4 @@
 from collections import OrderedDict
-
 from random import shuffle
 
 from drf_yasg2 import openapi

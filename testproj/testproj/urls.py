@@ -14,7 +14,7 @@ admin.autodiscover()
 swagger_info = openapi.Info(
     title="Snippets API",
     default_version="v1",
-    description="""This is a demo project for the [drf-yasg2](https://github.com/axnsan12/drf-yasg2) Django Rest Framework library.
+    description="""This is a demo project for the [drf_yasg2](https://github.com/joellefkowitz/drf-yasg) Django Rest Framework library.
 
 The `swagger-ui` view can be found [here](/cached/swagger).
 The `ReDoc` view can be found [here](/cached/redoc).

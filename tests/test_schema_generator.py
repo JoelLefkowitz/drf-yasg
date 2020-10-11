@@ -370,7 +370,7 @@ def test_optional_return_type(py_type, expected_type):
 
 EXPECTED_DESCRIPTION = """\
   description: |-
-    This is a demo project for the [drf-yasg2](https://github.com/axnsan12/drf-yasg2) Django Rest Framework library.
+    This is a demo project for the [drf_yasg2](https://github.com/joellefkowitz/drf-yasg) Django Rest Framework library.
 
     The `swagger-ui` view can be found [here](/cached/swagger).
     The `ReDoc` view can be found [here](/cached/redoc).
