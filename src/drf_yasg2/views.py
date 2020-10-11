@@ -11,15 +11,20 @@ from rest_framework.views import APIView
 
 from .app_settings import swagger_settings
 from .renderers import (
-    OpenAPIRenderer, ReDocOldRenderer, ReDocRenderer, SwaggerJSONRenderer, SwaggerUIRenderer, SwaggerYAMLRenderer,
-    _SpecRenderer
+    OpenAPIRenderer,
+    ReDocOldRenderer,
+    ReDocRenderer,
+    SwaggerJSONRenderer,
+    SwaggerUIRenderer,
+    SwaggerYAMLRenderer,
+    _SpecRenderer,
 )
 
 SPEC_RENDERERS = (SwaggerYAMLRenderer, SwaggerJSONRenderer, OpenAPIRenderer)
 UI_RENDERERS = {
-    'swagger': (SwaggerUIRenderer, ReDocRenderer),
-    'redoc': (ReDocRenderer, SwaggerUIRenderer),
-    'redoc-old': (ReDocOldRenderer, ReDocRenderer, SwaggerUIRenderer),
+    "swagger": (SwaggerUIRenderer, ReDocRenderer),
+    "redoc": (ReDocRenderer, SwaggerUIRenderer),
+    "redoc-old": (ReDocOldRenderer, ReDocRenderer, SwaggerUIRenderer),
 }
 
 
@@ -47,8 +52,17 @@ def deferred_never_cache(view_func):
     return _wrapped_view_func
 
 
-def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=False, validators=None,
-                    generator_class=None, authentication_classes=None, permission_classes=None):
+def get_schema_view(
+    info=None,
+    url=None,
+    patterns=None,
+    urlconf=None,
+    public=False,
+    validators=None,
+    generator_class=None,
+    authentication_classes=None,
+    permission_classes=None,
+):
     """Create a SchemaView class with default renderers and generators.
 
     :param .Info info: information about the API; if omitted, defaults to :ref:`DEFAULT_INFO <default-swagger-settings>`
@@ -73,7 +87,9 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
         _perm_classes = api_settings.DEFAULT_PERMISSION_CLASSES
     info = info or swagger_settings.DEFAULT_INFO
     validators = validators or []
-    _spec_renderers = tuple(renderer.with_validators(validators) for renderer in SPEC_RENDERERS)
+    _spec_renderers = tuple(
+        renderer.with_validators(validators) for renderer in SPEC_RENDERERS
+    )
 
     class SchemaView(APIView):
         _ignore_model_permissions = True
@@ -84,8 +100,8 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
         permission_classes = _perm_classes
         renderer_classes = _spec_renderers
 
-        def get(self, request, version='', format=None):
-            version = request.version or version or ''
+        def get(self, request, version="", format=None):
+            version = request.version or version or ""
             if isinstance(request.accepted_renderer, _SpecRenderer):
                 generator = self.generator_class(info, version, url, patterns, urlconf)
             else:
@@ -102,7 +118,7 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
 
             Arguments described in :meth:`.as_cached_view`.
             """
-            view = vary_on_headers('Cookie', 'Authorization')(view)
+            view = vary_on_headers("Cookie", "Authorization")(view)
             view = cache_page(cache_timeout, **cache_kwargs)(view)
             view = deferred_never_cache(view)  # disable in-browser caching
             return view
@@ -123,7 +139,9 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
             if cache_timeout != 0:
                 view = cls.apply_cache(view, cache_timeout, cache_kwargs)
             elif cache_kwargs:
-                warnings.warn("cache_kwargs ignored because cache_timeout is 0 (disabled)")
+                warnings.warn(
+                    "cache_kwargs ignored because cache_timeout is 0 (disabled)"
+                )
             return view
 
         @classmethod
@@ -136,10 +154,12 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
             :param dict cache_kwargs: dictionary of kwargs to be passed to cache_page
             :return: a view instance
             """
-            return cls.as_cached_view(cache_timeout, cache_kwargs, renderer_classes=_spec_renderers)
+            return cls.as_cached_view(
+                cache_timeout, cache_kwargs, renderer_classes=_spec_renderers
+            )
 
         @classmethod
-        def with_ui(cls, renderer='swagger', cache_timeout=0, cache_kwargs=None):
+        def with_ui(cls, renderer="swagger", cache_timeout=0, cache_kwargs=None):
             """
             Instantiate this view with a Web UI renderer, optionally wrapped with cache_page.
             See https://docs.djangoproject.com/en/dev/topics/cache/.
@@ -149,9 +169,13 @@ def get_schema_view(info=None, url=None, patterns=None, urlconf=None, public=Fal
             :param dict cache_kwargs: dictionary of kwargs to be passed to cache_page
             :return: a view instance
             """
-            assert renderer in UI_RENDERERS, "supported default renderers are " + ", ".join(UI_RENDERERS)
+            assert (
+                renderer in UI_RENDERERS
+            ), "supported default renderers are " + ", ".join(UI_RENDERERS)
             renderer_classes = UI_RENDERERS[renderer] + _spec_renderers
 
-            return cls.as_cached_view(cache_timeout, cache_kwargs, renderer_classes=renderer_classes)
+            return cls.as_cached_view(
+                cache_timeout, cache_kwargs, renderer_classes=renderer_classes
+            )
 
     return SchemaView

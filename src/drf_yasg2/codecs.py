@@ -30,6 +30,7 @@ def _validate_flex(spec):
 def _validate_swagger_spec_validator(spec):
     from swagger_spec_validator.validator20 import validate_spec as validate_ssv
     from swagger_spec_validator.common import SwaggerValidationError as SSVErr
+
     try:
         validate_ssv(spec)
     except SSVErr as ex:
@@ -38,8 +39,8 @@ def _validate_swagger_spec_validator(spec):
 
 #:
 VALIDATORS = {
-    'flex': _validate_flex,
-    'ssv': _validate_swagger_spec_validator,
+    "flex": _validate_flex,
+    "ssv": _validate_swagger_spec_validator,
 }
 
 
@@ -64,7 +65,7 @@ class _OpenAPICodec(object):
         :rtype: bytes
         """
         if not isinstance(document, openapi.Swagger):
-            raise TypeError('Expected a `openapi.Swagger` instance')
+            raise TypeError("Expected a `openapi.Swagger` instance")
 
         spec = self.generate_swagger_object(document)
         errors = {}
@@ -77,7 +78,9 @@ class _OpenAPICodec(object):
                 errors[validator] = str(e)
 
         if errors:
-            exc = SwaggerValidationError("spec validation failed: {}".format(errors), errors, spec, self)
+            exc = SwaggerValidationError(
+                "spec validation failed: {}".format(errors), errors, spec, self
+            )
             logger.warning(str(exc))
             raise exc
 
@@ -107,9 +110,9 @@ class _OpenAPICodec(object):
 
 
 class OpenAPICodecJson(_OpenAPICodec):
-    media_type = 'application/json'
+    media_type = "application/json"
 
-    def __init__(self, validators, pretty=False, media_type='application/json'):
+    def __init__(self, validators, pretty=False, media_type="application/json"):
         super(OpenAPICodecJson, self).__init__(validators)
         self.pretty = pretty
         self.media_type = media_type
@@ -119,15 +122,15 @@ class OpenAPICodecJson(_OpenAPICodec):
 
         :rtype: str"""
         if self.pretty:
-            out = json.dumps(spec, indent=4, separators=(',', ': '))
-            if out[-1] != '\n':
-                out += '\n'
+            out = json.dumps(spec, indent=4, separators=(",", ": "))
+            if out[-1] != "\n":
+                out += "\n"
             return out
         else:
             return json.dumps(spec)
 
 
-YAML_MAP_TAG = u'tag:yaml.org,2002:map'
+YAML_MAP_TAG = u"tag:yaml.org,2002:map"
 
 
 class SaneYamlDumper(yaml.SafeDumper):
@@ -142,7 +145,9 @@ class SaneYamlDumper(yaml.SafeDumper):
 
         Indent list elements.
         """
-        return super(SaneYamlDumper, self).increase_indent(flow=flow, indentless=False, **kwargs)
+        return super(SaneYamlDumper, self).increase_indent(
+            flow=flow, indentless=False, **kwargs
+        )
 
     def represent_odict(self, mapping, flow_style=None):  # pragma: no cover
         """https://gist.github.com/miracle2k/3184458
@@ -159,7 +164,7 @@ class SaneYamlDumper(yaml.SafeDumper):
         if self.alias_key is not None:
             self.represented_objects[self.alias_key] = node
         best_style = True
-        if hasattr(mapping, 'items'):
+        if hasattr(mapping, "items"):
             mapping = mapping.items()
         for item_key, item_value in mapping:
             node_key = self.represent_data(item_key)
@@ -178,8 +183,8 @@ class SaneYamlDumper(yaml.SafeDumper):
 
     def represent_text(self, text):
         if "\n" in text:
-            return self.represent_scalar('tag:yaml.org,2002:str', text, style='|')
-        return self.represent_scalar('tag:yaml.org,2002:str', text)
+            return self.represent_scalar("tag:yaml.org,2002:str", text, style="|")
+        return self.represent_scalar("tag:yaml.org,2002:str", text)
 
 
 SaneYamlDumper.add_representer(binary_type, SaneYamlDumper.represent_text)
@@ -201,7 +206,12 @@ def yaml_sane_dump(data, binary):
     :return: the serialized YAML
     :rtype: str or bytes
     """
-    return yaml.dump(data, Dumper=SaneYamlDumper, default_flow_style=False, encoding='utf-8' if binary else None)
+    return yaml.dump(
+        data,
+        Dumper=SaneYamlDumper,
+        default_flow_style=False,
+        encoding="utf-8" if binary else None,
+    )
 
 
 class SaneYamlLoader(yaml.SafeLoader):
@@ -223,9 +233,9 @@ def yaml_sane_load(stream):
 
 
 class OpenAPICodecYaml(_OpenAPICodec):
-    media_type = 'application/yaml'
+    media_type = "application/yaml"
 
-    def __init__(self, validators, media_type='application/yaml'):
+    def __init__(self, validators, media_type="application/yaml"):
         super(OpenAPICodecYaml, self).__init__(validators)
         self.media_type = media_type
 

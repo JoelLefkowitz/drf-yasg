@@ -1,11 +1,27 @@
 from ..app_settings import swagger_settings
 from .base import (
-    BaseInspector, FieldInspector, FilterInspector, NotHandled, PaginatorInspector, SerializerInspector, ViewInspector
+    BaseInspector,
+    FieldInspector,
+    FilterInspector,
+    NotHandled,
+    PaginatorInspector,
+    SerializerInspector,
+    ViewInspector,
 )
 from .field import (
-    CamelCaseJSONFilter, ChoiceFieldInspector, DictFieldInspector, FileFieldInspector, HiddenFieldInspector,
-    InlineSerializerInspector, JSONFieldInspector, RecursiveFieldInspector, ReferencingSerializerInspector,
-    RelatedFieldInspector, SerializerMethodFieldInspector, SimpleFieldInspector, StringDefaultFieldInspector
+    CamelCaseJSONFilter,
+    ChoiceFieldInspector,
+    DictFieldInspector,
+    FileFieldInspector,
+    HiddenFieldInspector,
+    InlineSerializerInspector,
+    JSONFieldInspector,
+    RecursiveFieldInspector,
+    ReferencingSerializerInspector,
+    RelatedFieldInspector,
+    SerializerMethodFieldInspector,
+    SimpleFieldInspector,
+    StringDefaultFieldInspector,
 )
 from .query import CoreAPICompatInspector, DjangoRestResponsePagination
 from .view import SwaggerAutoSchema
@@ -17,19 +33,31 @@ ViewInspector.paginator_inspectors = swagger_settings.DEFAULT_PAGINATOR_INSPECTO
 
 __all__ = [
     # base inspectors
-    'BaseInspector', 'FilterInspector', 'PaginatorInspector', 'FieldInspector', 'SerializerInspector', 'ViewInspector',
-
+    "BaseInspector",
+    "FilterInspector",
+    "PaginatorInspector",
+    "FieldInspector",
+    "SerializerInspector",
+    "ViewInspector",
     # filter and pagination inspectors
-    'CoreAPICompatInspector', 'DjangoRestResponsePagination',
-
+    "CoreAPICompatInspector",
+    "DjangoRestResponsePagination",
     # field inspectors
-    'InlineSerializerInspector', 'RecursiveFieldInspector', 'ReferencingSerializerInspector', 'RelatedFieldInspector',
-    'SimpleFieldInspector', 'FileFieldInspector', 'ChoiceFieldInspector', 'DictFieldInspector', 'JSONFieldInspector',
-    'StringDefaultFieldInspector', 'CamelCaseJSONFilter', 'HiddenFieldInspector', 'SerializerMethodFieldInspector',
-
+    "InlineSerializerInspector",
+    "RecursiveFieldInspector",
+    "ReferencingSerializerInspector",
+    "RelatedFieldInspector",
+    "SimpleFieldInspector",
+    "FileFieldInspector",
+    "ChoiceFieldInspector",
+    "DictFieldInspector",
+    "JSONFieldInspector",
+    "StringDefaultFieldInspector",
+    "CamelCaseJSONFilter",
+    "HiddenFieldInspector",
+    "SerializerMethodFieldInspector",
     # view inspectors
-    'SwaggerAutoSchema',
-
+    "SwaggerAutoSchema",
     # module constants
-    'NotHandled',
+    "NotHandled",
 ]

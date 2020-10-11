@@ -15,27 +15,80 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Snippet',
+            name="Snippet",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('title', models.CharField(blank=True, default='', max_length=100)),
-                ('code', models.TextField(help_text='code model help text')),
-                ('linenos', models.BooleanField(default=False)),
-                ('language', models.CharField(choices=[('cpp', 'cpp'), ('js', 'js'), ('python', 'python')], default='python', max_length=100)),
-                ('style', models.CharField(choices=[('monokai', 'monokai'), ('solarized-dark', 'solarized-dark'), ('vim', 'vim')], default='solarized-dark', max_length=100)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='snippets', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("title", models.CharField(blank=True, default="", max_length=100)),
+                ("code", models.TextField(help_text="code model help text")),
+                ("linenos", models.BooleanField(default=False)),
+                (
+                    "language",
+                    models.CharField(
+                        choices=[("cpp", "cpp"), ("js", "js"), ("python", "python")],
+                        default="python",
+                        max_length=100,
+                    ),
+                ),
+                (
+                    "style",
+                    models.CharField(
+                        choices=[
+                            ("monokai", "monokai"),
+                            ("solarized-dark", "solarized-dark"),
+                            ("vim", "vim"),
+                        ],
+                        default="solarized-dark",
+                        max_length=100,
+                    ),
+                ),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="snippets",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
-            options={
-                'ordering': ('created',),
-            },
+            options={"ordering": ("created",),},
         ),
         migrations.CreateModel(
-            name='SnippetViewer',
+            name="SnippetViewer",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('snippet', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='viewers', to='snippets.snippet')),
-                ('viewer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='snippet_views', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "snippet",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="viewers",
+                        to="snippets.snippet",
+                    ),
+                ),
+                (
+                    "viewer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="snippet_views",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

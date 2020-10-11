@@ -2,7 +2,7 @@
 from pkg_resources import DistributionNotFound, get_distribution
 
 __author__ = """Cristi V."""
-__email__ = 'cristi@cvjd.me'
+__email__ = "cristi@cvjd.me"
 
 try:
     __version__ = get_distribution(__name__).version
