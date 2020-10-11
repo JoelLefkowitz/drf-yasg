@@ -33,7 +33,7 @@ if __name__ == "__main__":
                 "django-cors-headers>=3.5.0",
                 "django-filter>=1.1.0",
                 "django-oauth-toolkit>=1.3.2",
-                "djangorestframework-camel-case>=1.2.0",
+                "djangorestframework-camel-case>=1.0.3",
                 "djangorestframework-recursive>=0.1.2",
                 "Pillow>=4.3.0",
                 "pytest>=4.6.11",
