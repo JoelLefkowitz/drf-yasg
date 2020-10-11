@@ -6,44 +6,36 @@ dist: xenial
 jobs:
   include:
     - stage: lint
-      script: flake8 src/drf_yasg2 testproj tests setup.py
+      script: scripts/lint.sh
       install:
         - pip install -r requirements/lint.txt
 
     # Use aliases to specify matrix style parallelism in this stage only
     - &unittest
       stage: unittest
-      script: tox
-      python: 3.8
-      env: TOXENV=latest
+      python: 3.6
+      script: scripts/tox-filter.sh py36
       install:
         - pip install -r requirements/test.txt
 
     - <<: *unittest
-      python: 3.6
-      env: TOXENV=stable
-
-    - <<: *unittest
       python: 3.7
-      env: TOXENV=stable
+      script: scripts/tox-filter.sh py37
 
     - <<: *unittest
       python: 3.8
-      env: TOXENV=stable
+      script: scripts/tox-filter.sh py38
 
     - stage: check-docs
-      script: twine check .tox/dist/*
+      script: scripts/check-docs.sh
       install:
         - pip install -r requirements/docs.txt
 
-    # Check readthedocs will be able to build the docs after publishing
+    # This ensures that readthedocs will be able to build the docs
     - stage: test-docs
-      script: sphinx-build -WnEa -b html docs docs/_build/html
+      script: scripts/build-docs.sh
       install:
         - pip install -r requirements/docs.txt
-
-  allow_failures:
-    - env: TOXENV=latest
 
 before_deploy: "pip install -r requirements/publish.txt"
 
