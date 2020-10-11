@@ -1,7 +1,8 @@
 import user_agents
-from django.conf.urls import include, url
+from django.conf.urls import url
 from django.contrib import admin
 from django.shortcuts import redirect
+from django.urls import include
 from rest_framework import permissions
 from rest_framework.decorators import api_view
 
@@ -9,7 +10,6 @@ from drf_yasg2 import openapi
 from drf_yasg2.views import get_schema_view
 
 admin.autodiscover()
-
 
 swagger_info = openapi.Info(
     title="Snippets API",

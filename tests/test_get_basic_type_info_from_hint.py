@@ -1,6 +1,5 @@
-import uuid
-
 import pytest
+import uuid
 
 from drf_yasg2 import openapi
 from drf_yasg2.inspectors.field import get_basic_type_info_from_hint
