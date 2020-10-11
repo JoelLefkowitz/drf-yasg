@@ -8,7 +8,7 @@ jobs:
     - stage: lint
       script: scripts/lint.sh
       install:
-        - pip install -r requirements/lint.txt
+        - pip install .[lint]
 
     # Use aliases to specify matrix style parallelism in this stage only
     - &unittest
@@ -16,7 +16,7 @@ jobs:
       python: 3.6
       script: scripts/tox-filter.sh py36
       install:
-        - pip install -r requirements/test.txt
+        - pip install .[test]
 
     - <<: *unittest
       python: 3.7
@@ -29,15 +29,13 @@ jobs:
     - stage: check-docs
       script: scripts/check-docs.sh
       install:
-        - pip install -r requirements/docs.txt
+        - pip install .[docs]
 
     # This ensures that readthedocs will be able to build the docs
     - stage: test-docs
       script: scripts/build-docs.sh
       install:
-        - pip install -r requirements/docs.txt
-
-before_deploy: "pip install -r requirements/publish.txt"
+        - pip install .[docs]
 
 deploy:
   provider: pypi
