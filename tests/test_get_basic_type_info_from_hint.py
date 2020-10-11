@@ -8,6 +8,7 @@ from drf_yasg2.inspectors.field import get_basic_type_info_from_hint
 try:
     import typing
     from typing import Dict, List, Union, Optional, Set
+
 except ImportError:
     typing = None
 

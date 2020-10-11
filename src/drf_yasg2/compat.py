@@ -162,6 +162,7 @@ except ImportError:
 if markdown is not None and pygments is not None:
     # starting from this blogpost and modified to support current markdown extensions API
     # https://zerokspot.com/weblog/2008/06/18/syntax-highlighting-in-markdown-with-pygments/
+
     from markdown.preprocessors import Preprocessor
     import re
 

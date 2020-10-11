@@ -1,10 +1,9 @@
-import six
-
 import collections
 import logging
 import re
 from collections import OrderedDict
 
+import six
 from coreapi.compat import urlparse
 from django.urls import get_script_prefix
 from django.utils.functional import Promise
