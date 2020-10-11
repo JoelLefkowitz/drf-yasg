@@ -13,10 +13,14 @@ jobs:
     # Use aliases to specify matrix style parallelism in this stage only
     - &unittest
       stage: unittest
-      python: 3.6
-      script: scripts/tox-filter.sh py36
+      python: 2.7
+      script: scripts/tox-filter.sh py27
       install:
         - pip install .[tests]
+
+    - <<: *unittest
+      python: 3.6
+      script: scripts/tox-filter.sh py36
 
     - <<: *unittest
       python: 3.7
