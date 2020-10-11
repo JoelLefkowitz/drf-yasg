@@ -1,12 +1,12 @@
+import datetime
 import inspect
 import logging
 import operator
 import sys
-from collections import OrderedDict
-
-import datetime
 import uuid
+from collections import OrderedDict
 from decimal import Decimal
+
 from django.core import validators
 from django.db import models
 from rest_framework import serializers

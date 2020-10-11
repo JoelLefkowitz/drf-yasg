@@ -16,7 +16,7 @@ from drf_yasg2.codecs import yaml_sane_dump, yaml_sane_load
 from drf_yasg2.generators import OpenAPISchemaGenerator
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def django_db_setup(django_db_setup, django_db_blocker):
     with django_db_blocker.unblock():
         User.objects.create(username="admin", password="adminuser")

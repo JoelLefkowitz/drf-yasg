@@ -1,11 +1,11 @@
 import json
 import os
-from collections import OrderedDict
-
-import pytest
 import random
 import string
 import tempfile
+from collections import OrderedDict
+
+import pytest
 
 from drf_yasg2 import openapi
 from drf_yasg2.codecs import yaml_sane_load
