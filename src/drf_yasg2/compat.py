@@ -108,14 +108,8 @@ if "patch" not in View.http_method_names:
 # Markdown is optional (version 3.0+ required)
 try:
     import markdown
-<<<<<<< HEAD
-
-    HEADERID_EXT_PATH = "markdown.extensions.toc"
-    LEVEL_PARAM = "baselevel"
-=======
     HEADERID_EXT_PATH = 'markdown.extensions.toc'
     LEVEL_PARAM = 'baselevel'
->>>>>>> 1945c981d407eb85b839be76781d245b861ff47d
 
     def apply_markdown(text):
         """
