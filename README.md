@@ -1,6 +1,7 @@
 # DRF - Yet another Swagger generator 2
 
-Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framework code.
+Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST
+Framework code.
 
 ## Status
 
@@ -19,7 +20,6 @@ Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framew
 | 1.18.x  | 3.6 - 3.8  | 2.2 - 3.0 | 3.8 - 3.12            |
 | 1.19.x  | 3.6 - 3.9  | 2.2 - 3.0 | 3.8 - 3.12            |
 
-
 ## Features
 
 * Full support for nested Serializers and Schemas
@@ -27,20 +27,22 @@ Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framew
 * Model definitions compatible with codegen tools
 * Customization hooks at all points in the spec generation process
 * JSON and YAML format for spec
-* Bundles latest version of [swagger-ui](https://github.com/swagger-api/swagger-ui) and [redoc](https://github.com/Rebilly/ReDoc) for viewing the generated documentation
+* Bundles latest version of [swagger-ui](https://github.com/swagger-api/swagger-ui)
+and [redoc](https://github.com/Rebilly/ReDoc) for viewing the generated documentation
+
 * Schema view is cacheable out of the box
-* Generated Swagger schema can be automatically validated by [swagger-spec-validator] (https://github.com/Yelp/swagger_spec_validator)
-* Supports Django REST Framework API versioning with ``URLPathVersioning`` and ``NamespaceVersioning``; other DRF
-  or custom versioning schemes are not currently supported
+* Generated Swagger schema can be automatically validated by [swagger-spec-validator](https://github.com/Yelp/swagger_spec_validator)
+
+* Supports Django REST Framework API versioning with ``URLPathVersioning`` and
+``NamespaceVersioning``; other DRF or custom versioning schemes are not currently
+supported
 
 ### Screenshots
 
 #### Fully nested request and response schemas
 
-
 ![Redoc screenshot][redoc_screenshot]
 #### Choose between redoc and swagger-ui
-
 
 ![Swagger-ui screenshot][swagger_ui_screenshot]
 
@@ -116,7 +118,7 @@ Additional details are available in the [full documentation](https://drf_yasg2.r
 To generate the documentation locally:
 
 ```bash
-scripts/build-docs.sh
+scripts/docs.sh
 ```
 
 ### Tests
@@ -140,11 +142,11 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 This project forked from [drf-yasg](https://github.com/axnsan12/drf-yasg).
 Credit is given to [Cristi Vîjdea](https://github.com/axnsan12) and the original contributors.
 
-- **Cristi Vîjdea** - _Initial work_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
-- **Joel Lefkowitz** - _This fork's maintainer_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
+* **Cristi Vîjdea** - _Initial work_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
+
+* **Joel Lefkowitz** - _This fork's maintainer_ - [Joel Lefkowitz](https://github.com/JoelLefkowitz)
 
 Huge thank you to the contributors who've participated in this project. Have a look at the [contributions](https://github.com/JoelLefkowitz/drf-yasg/pulse)!
-
 
 ### License
 

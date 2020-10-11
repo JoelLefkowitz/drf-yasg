@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -ev
 
 # Separate imports and let autoflake filter them

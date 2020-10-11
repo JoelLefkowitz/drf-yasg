@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#
+
 # drf-yasg2 documentation build configuration file, created by
 # sphinx-quickstart on Sun Dec 10 15:20:34 2017.
 import inspect
@@ -17,7 +17,6 @@ from pkg_resources import get_distribution
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#
 # needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -38,9 +37,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "drf-yasg2"
-copyright = "2018, Cristi V."
-author = "Cristi V."
+project = "drf_yasg2"
+copyright = "2020, Joel Lefkowitz"
+author = "Joel Lefkowitz"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -49,6 +48,7 @@ author = "Cristi V."
 # The full version, including alpha/beta/rc tags.
 
 release = get_distribution("drf_yasg2").version
+
 if "noscm" in release:
     raise AssertionError(
         "Invalid package version string: %s. \n"
@@ -223,8 +223,8 @@ import drf_yasg2.views  # noqa: E402
 drf_yasg2.views.SchemaView = drf_yasg2.views.get_schema_view(None)
 
 # monkey patch to stop sphinx from trying to find classes by their real location instead of the
-# top-level __init__ alias; this allows us to document only `drf_yasg2.inspectors` and avoid broken references or
-# double documenting
+# top-level __init__ alias; this allows us to document only `drf_yasg2.inspectors` and avoid 
+# broken references or double documenting
 
 import drf_yasg2.inspectors  # noqa: E402
 
@@ -236,6 +236,7 @@ def redirect_cls(cls):
 
 
 for cls_name in drf_yasg2.inspectors.__all__:
+
     # first pass - replace all classes' module with the top level module
     real_cls = getattr(drf_yasg2.inspectors, cls_name)
     if not inspect.isclass(real_cls):
@@ -247,6 +248,7 @@ for cls_name in drf_yasg2.inspectors.__all__:
     setattr(drf_yasg2.inspectors, cls_name, patched_cls)
 
 for cls_name in drf_yasg2.inspectors.__all__:
+
     # second pass - replace the inheritance bases for all classes to point to the new clean classes
     real_cls = getattr(drf_yasg2.inspectors, cls_name)
     if not inspect.isclass(real_cls):
