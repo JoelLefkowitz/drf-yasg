@@ -1,5 +1,4 @@
 import six
-
 from django.shortcuts import resolve_url
 from django.template.loader import render_to_string
 from django.utils.encoding import force_str

@@ -4,7 +4,6 @@
 
 from setuptools import setup
 
-
 if __name__ == "__main__":
     setup(
         install_requires=[
@@ -19,7 +18,7 @@ if __name__ == "__main__":
             "uritemplate>=3.0.1",
         ],
         extras_require={
-            "lint": ["flake8>=3.5.0", "flake8-isort>=2.3.0", "isort>=4.2.0"],
+            "lint": ["flake8>=3.5.0"],
             "format": ["autoflake>=1.4.0", "black>=20.8.0", "isort>=4.2.0"],
             "docs": [
                 "djangorestframework_camel_case>=0.2.0",
