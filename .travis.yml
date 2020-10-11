@@ -16,7 +16,7 @@ jobs:
       python: 3.6
       script: scripts/tox-filter.sh py36
       install:
-        - pip install .[test]
+        - pip install .[tests]
 
     - <<: *unittest
       python: 3.7
