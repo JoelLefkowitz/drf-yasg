@@ -2,16 +2,11 @@ from django.conf import settings
 from django.views.generic import View
 
 try:
-    from django.urls import (  # noqa
-        URLPattern,
-        URLResolver,
-    )
+    from django.urls import URLPattern, URLResolver  # noqa
 except ImportError:
     # Will be removed in Django 2.0
-    from django.urls import (  # noqa
-        RegexURLPattern as URLPattern,
-        RegexURLResolver as URLResolver,
-    )
+    from django.urls import RegexURLPattern as URLPattern  # noqa
+    from django.urls import RegexURLResolver as URLResolver
 
 
 def get_original_route(urlpattern):
@@ -113,9 +108,14 @@ if "patch" not in View.http_method_names:
 # Markdown is optional (version 3.0+ required)
 try:
     import markdown
+<<<<<<< HEAD
 
     HEADERID_EXT_PATH = "markdown.extensions.toc"
     LEVEL_PARAM = "baselevel"
+=======
+    HEADERID_EXT_PATH = 'markdown.extensions.toc'
+    LEVEL_PARAM = 'baselevel'
+>>>>>>> 1945c981d407eb85b839be76781d245b861ff47d
 
     def apply_markdown(text):
         """
@@ -136,8 +136,11 @@ except ImportError:
     markdown = None
 try:
     import pygments
-    from pygments.lexers import get_lexer_by_name, TextLexer
     from pygments.formatters import HtmlFormatter
+<<<<<<< HEAD
+=======
+    from pygments.lexers import TextLexer, get_lexer_by_name
+>>>>>>> 1945c981d407eb85b839be76781d245b861ff47d
 
     def pygments_highlight(text, lang, style):
         lexer = get_lexer_by_name(lang, stripall=False)
@@ -162,8 +165,9 @@ except ImportError:
 if markdown is not None and pygments is not None:
     # starting from this blogpost and modified to support current markdown extensions API
     # https://zerokspot.com/weblog/2008/06/18/syntax-highlighting-in-markdown-with-pygments/
-    from markdown.preprocessors import Preprocessor
     import re
+
+    from markdown.preprocessors import Preprocessor
 
     class CodeBlockPreprocessor(Preprocessor):
         pattern = re.compile(r"^\s*``` *([^\n]+)\n(.+?)^\s*```", re.M | re.S)

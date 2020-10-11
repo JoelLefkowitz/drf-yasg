@@ -1,10 +1,10 @@
 import inspect
 import logging
 import sys
-import textwrap
 from collections import OrderedDict
-from decimal import Decimal
 
+import textwrap
+from decimal import Decimal
 from django.db import models
 from django.utils.encoding import force_str
 from rest_framework import serializers, status
@@ -73,8 +73,8 @@ def swagger_auto_schema(
 
         If a ``Serializer`` class or instance is given, it will be automatically converted into a :class:`.Schema`
         used as a ``body`` :class:`.Parameter`, or into a list of ``form`` :class:`.Parameter`\\ s, as appropriate.
-    :type request_body: drf_yasg2.openapi.Schema or drf_yasg2.openapi.SchemaRef  or rest_framework.serializers.Serializer
-        or type[no_body]
+    :type request_body: drf_yasg2.openapi.Schema or drf_yasg2.openapi.SchemaRef  or
+        rest_framework.serializers.Serializer or type[no_body]
 
     :param rest_framework.serializers.Serializer query_serializer: if you use a ``Serializer`` to parse query
         parameters, you can pass it here and have :class:`.Parameter` objects be generated automatically from it.
@@ -117,8 +117,9 @@ def swagger_auto_schema(
     :type responses: dict[int or str, (drf_yasg2.openapi.Schema or drf_yasg2.openapi.SchemaRef or
         drf_yasg2.openapi.Response or str or rest_framework.serializers.Serializer)]
 
-    :param list[type[drf_yasg2.inspectors.FieldInspector]] field_inspectors: extra serializer and field inspectors; these
-        will be tried before :attr:`.ViewInspector.field_inspectors` on the :class:`.inspectors.SwaggerAutoSchema`
+    :param list[type[drf_yasg2.inspectors.FieldInspector]] field_inspectors: extra serializer and field inspectors;
+        these will be tried before :attr:`.ViewInspector.field_inspectors` on the
+        :class:`.inspectors.SwaggerAutoSchema`
     :param list[type[drf_yasg2.inspectors.FilterInspector]] filter_inspectors: extra filter inspectors; these will be
         tried before :attr:`.ViewInspector.filter_inspectors` on the :class:`.inspectors.SwaggerAutoSchema`
     :param list[type[drf_yasg2.inspectors.PaginatorInspector]] paginator_inspectors: extra paginator inspectors; these

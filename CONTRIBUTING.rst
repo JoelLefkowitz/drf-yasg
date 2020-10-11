@@ -71,7 +71,7 @@ You want to contribute some code? Great! Here are a few steps to get you started
       # run tests in the current environment, faster than tox
       (venv) $ pytest -n auto --cov
       # (optional) sort imports with isort and check flake8 linting
-      (venv) $ isort --apply
+      (venv) $ isort .
       (venv) $ flake8 src/drf_yasg2 testproj tests setup.py
       # (optional) run tests for other python versions in separate environments
       (venv) $ tox
@@ -95,7 +95,7 @@ You want to contribute some code? Great! Here are a few steps to get you started
 
 #. **Your code must pass all the required travis jobs before it is merged**
 
-   As of now, this consists of running on Python 2.7, 3.5, 3.6 and 3.7, and building the docs succesfully.
+   As of now, this consists of running on Python 2.7, 3.5, 3.6, 3.7, and 3.8 and building the docs successfully.
 
 ******************
 Maintainer's notes
@@ -107,14 +107,14 @@ Release checklist
 * update ``docs/changelog.rst`` with changes since the last tagged version
 * commit & tag the release - ``git tag x.x.x -m "Release version x.x.x"``
 * push using ``git push --follow-tags``
-* verify that `Travis`_ has built the tag and succesfully published the release to `PyPI`_
+* verify that `Travis`_ has built the tag and successfully published the release to `PyPI`_
 * publish release notes `on GitHub`_
 * start the `ReadTheDocs build`_ if it has not already started
 * deploy the live demo `on Heroku`_
 
 
-.. _Travis: https://travis-ci.org/axnsan12/drf-yasg2/builds
+.. _Travis: https://travis-ci.org/JoelLefkowitz/drf-yasg/builds
 .. _PyPI: https://pypi.org/project/drf-yasg2/
-.. _on GitHub: https://github.com/axnsan12/drf-yasg2/releases
+.. _on GitHub: https://github.com/JoelLefkowitz/drf-yasg/releases
 .. _ReadTheDocs build: https://readthedocs.org/projects/drf-yasg2/builds/
 .. _on Heroku: https://dashboard.heroku.com/pipelines/412d1cae-6a95-4f5e-810b-94869133f36a
