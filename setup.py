@@ -23,7 +23,6 @@ py3_supported_range = (6, 9)
 
 # convert inclusive range to exclusive range
 py3_supported_range = (py3_supported_range[0], py3_supported_range[1] + 1)
-python_requires = ", ".join(["!=3.{}.*".format(v) for v in range(0, py3_supported_range[0])])
 python_classifiers = [
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
@@ -48,7 +47,7 @@ def drf_yasg_setup(**kwargs):
         author_email='cristi@cvjd.me',
         keywords='drf django django-rest-framework schema swagger openapi codegen swagger-codegen'
                  'documentation drf-yasg, drf-yasg2 django-rest-swagger drf-openapi',
-        python_requires=python_requires,
+        python_requires='>=3.6',
         classifiers=[
             'Intended Audience :: Developers',
             'License :: OSI Approved :: BSD License',
