@@ -5,5 +5,5 @@ Pillow>=4.3.0
 readme_renderer[md]>=24.0
 twine>=1.12.1
 
-Django>=2.0
+Django>=2.2
 djangorestframework_camel_case>=0.2.0

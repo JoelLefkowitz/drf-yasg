@@ -7,4 +7,4 @@ uritemplate>=3.0.0
 packaging
 
 djangorestframework>=3.8
-Django>=1.11.7
+Django>=2.2
