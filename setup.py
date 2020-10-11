@@ -11,7 +11,7 @@ if __name__ == "__main__":
             "coreschema>=0.0.4",
             "django>=1.1.0",
             "djangorestframework>=3.8.0",
-            "inflection>=0.5.1",
+            "inflection>=0.3.1",
             "ruamel.yaml>=0.16.12",
             "six>=1.15.0",
             "swagger-spec-validator>=2.1.0",

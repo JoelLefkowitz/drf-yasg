@@ -7,7 +7,7 @@ Framework code.
 
 | Source     | Shields                                                        |
 | ---------- | -------------------------------------------------------------- |
-| Project    | ![license][license] ![release][release]                        |
+| Project    | ![license][license] ![release][release] ![build][build]        |
 | Publishers | [![pypi][pypi]][pypi_link]                                     |
 | Downloads  | ![pypi_downloads][pypi_downloads]                              |
 | Raised     | [![issues][issues]][issues_link] [![pulls][pulls]][pulls_link] |
@@ -156,6 +156,8 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE.md](L
 
 [license]: https://img.shields.io/github/license/joellefkowitz/drf-yasg
 [release]: https://img.shields.io/github/v/tag/joellefkowitz/drf-yasg
+[build]:  https://travis-ci.org/JoelLefkowitz/drf-yasg.svg?branch=master
+
 [pypi_downloads]: https://img.shields.io/pypi/dw/drf-yasg
 
 [pypi]: https://img.shields.io/pypi/v/drf_yasg2 "PyPi"
