@@ -1,16 +1,12 @@
-.. |br| raw:: html
-
-   <br />
-
-#######
-License
-#######
-
-********************
 BSD 3-Clause License
-********************
+====================
 
-Copyright (c) 2017 - 2019, Cristian V. <cristi@cvjd.me> |br|\ All rights reserved.
+
+* Copyright (c) 2020 - 2021, Joel Lefkowitz <joellefkowitz@hotmail.com>
+
+* Copyright (c) 2017 - 2019, Cristian Vîjdea <cristi@cvjd.me>
+
+_All rights reserved._
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -36,3 +32,6 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
