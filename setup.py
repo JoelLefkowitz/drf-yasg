@@ -14,7 +14,6 @@ if __name__ == "__main__":
             "inflection>=0.3.1",
             "ruamel.yaml>=0.16.12",
             "six>=1.15.0",
-            "swagger-spec-validator>=2.1.0",
             "uritemplate>=3.0.1",
         ],
         extras_require={
