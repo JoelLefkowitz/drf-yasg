@@ -40,6 +40,6 @@ if __name__ == "__main__":
                 "tox>=3.3.0",
                 "user_agents>=1.1.0",
             ],
-            "heroku": ["gunicorn>=19.7.1", "psycopg2>=2.7.3", "whitenoise>=3.3.1",],
+            "heroku": ["dj-database-url>=0.4.2", "gunicorn>=19.7.1", "psycopg2>=2.7.3", "whitenoise>=3.3.1",],
         },
     )

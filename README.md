@@ -158,7 +158,7 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE.md](L
 [release]: https://img.shields.io/github/v/tag/joellefkowitz/drf-yasg
 [build]:  https://travis-ci.org/JoelLefkowitz/drf-yasg.svg?branch=master
 
-[pypi_downloads]: https://img.shields.io/pypi/dw/drf-yasg
+[pypi_downloads]: https://img.shields.io/pypi/dw/drf_yasg2
 
 [pypi]: https://img.shields.io/pypi/v/drf_yasg2 "PyPi"
 [pypi_link]: https://pypi.org/project/drf_yasg2
