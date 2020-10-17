@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def is_callable_method(cls_or_instance, method_name):
     method = getattr(cls_or_instance, method_name)
-    
+
     # bound classmethod or instance method
     if inspect.ismethod(method) and getattr(method, "__self__", None):
         return method, True

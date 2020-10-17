@@ -187,4 +187,3 @@ class Command(BaseCommand):
         else:
             with os.open(output_file, "w") as stream:
                 self.write_schema(schema, stream, format)
-        
