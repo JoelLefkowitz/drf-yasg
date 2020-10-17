@@ -30,6 +30,10 @@ jobs:
       python: 3.8
       script: scripts/tox-filter.sh py38
 
+    - <<: *unittest
+      python: 3.9-dev
+      script: scripts/tox-filter.sh py39
+
     # This tests readthedocs will be able to build
     - stage: test-docs
       script: scripts/docs.sh
