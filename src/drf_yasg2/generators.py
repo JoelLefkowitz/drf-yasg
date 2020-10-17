@@ -6,6 +6,7 @@ from collections import OrderedDict, defaultdict
 import rest_framework
 import uritemplate
 from coreapi.compat import urlparse
+from django.urls.resolvers import URLPattern, URLResolver
 from packaging.version import Version
 from rest_framework import versioning
 from rest_framework.schemas.generators import EndpointEnumerator as _EndpointEnumerator
@@ -139,8 +140,8 @@ class EndpointEnumerator(_EndpointEnumerator):
                 except Exception:  # pragma: no cover
                     logger.warning("failed to enumerate view", exc_info=True)
 
-            
-        
+            elif isinstance(pattern, URLResolver):
+                nested_endpoints = self.get_api_endpoints(
                     patterns=pattern.url_patterns,
                     prefix=path_regex,
                     app_name="%s:%s" % (app_name, pattern.app_name)
