@@ -39,6 +39,7 @@ jobs:
     # This tests the package is packaged correctly
     # Don't install any other dependencies preemtively
     - stage: test-publish
+      python: 3.8
       script: scripts/test-packaging.sh
       install:
         - pip install tox
