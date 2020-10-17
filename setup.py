@@ -25,7 +25,7 @@ if __name__ == "__main__":
             "lint": ["flake8>=3.5.0"],
             "format": ["autoflake>=1.4.0", "black>=20.8.0", "isort>=4.2.0"],
             "dist": ["bump2version", "wheel"],
-            "validation": ["swagger-spec-validator>=2.1.0"]
+            "validation": ["swagger-spec-validator>=2.1.0"],
             "docs": [
                 "djangorestframework_camel_case>=0.2.0",
                 "Pillow>=4.3.0",
