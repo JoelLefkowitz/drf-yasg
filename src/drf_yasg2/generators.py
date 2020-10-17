@@ -14,8 +14,6 @@ from rest_framework.settings import api_settings
 
 from . import openapi
 from .app_settings import swagger_settings
-from .compat import URLPattern  # noqa
-from .compat import URLResolver  # noqa
 from .errors import SwaggerGenerationError
 from .inspectors.field import (
     get_basic_type_info,
@@ -141,8 +139,8 @@ class EndpointEnumerator(_EndpointEnumerator):
                 except Exception:  # pragma: no cover
                     logger.warning("failed to enumerate view", exc_info=True)
 
-            elif isinstance(pattern, URLResolver):
-                nested_endpoints = self.get_api_endpoints(
+            
+        
                     patterns=pattern.url_patterns,
                     prefix=path_regex,
                     app_name="%s:%s" % (app_name, pattern.app_name)
