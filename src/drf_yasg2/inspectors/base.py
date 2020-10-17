@@ -30,10 +30,6 @@ def is_callable_method(cls_or_instance, method_name):
                 getattr_static(cls_or_instance, method_name, None), staticmethod
             ),
         )
-    except ImportError:
-        # python 2 still has unbound methods, so ismethod <=> !staticmethod TODO: remove when dropping python 2.7
-        return method, not inspect.ismethod(method)
-
 
 def call_view_method(view, method_name, fallback_attr=None, default=None):
     """Call a view method which might throw an exception. If an exception is thrown, log an informative error message
