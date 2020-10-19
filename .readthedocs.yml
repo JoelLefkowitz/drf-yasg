@@ -1,7 +1,8 @@
 sphinx:
   configuration: docs/conf.py
 
-formats: all
+formats:
+  - pdf 
 
 python:
    version: 3.8
