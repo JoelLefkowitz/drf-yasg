@@ -22,7 +22,7 @@ from docutils.parsers.rst.roles import set_classes
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-version = "1.19.2"
+version = "1.19.3"
 
 extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode"]
 
@@ -39,7 +39,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "drf_yasg2"
+project = "drf-yasg2"
 copyright = "2020, Joel Lefkowitz"
 author = "Joel Lefkowitz"
 
@@ -141,10 +141,10 @@ man_pages = [(master_doc, "drf_yasg2", "drf_yasg2 Documentation", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "drf_yasg2",
-        "drf_yasg2 Documentation",
+        "drf-yasg2",
+        "drf-yasg2 Documentation",
         author,
-        "drf_yasg2",
+        "drf-yasg2",
         "One line description of project.",
         "Miscellaneous",
     ),

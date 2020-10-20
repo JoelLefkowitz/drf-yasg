@@ -3,10 +3,19 @@ Changelog
 #########
 
 **********
+**1.19.3**
+**********
+
+*Release date: Oct 20, 2020*
+
+- **IMPROVED:** Updated bundled swagger-ui and redoc Javascript dependencies
+
+**********
 **1.19.2**
 **********
 
 *Release date: Oct 19, 2020*
+
 - **FIXED:** Fixed heroku dependencies
 - **FIXED:** Fixed readthedocs build configuraion
 
@@ -16,6 +25,7 @@ Changelog
 **********
 
 *Release date: Oct 17, 2020*
+
 - **ADDED:** Dropped support for Python 2.7
 
 **********
@@ -33,6 +43,7 @@ Changelog
 *Release date: Oct 12, 2020*
 
 **Final support was provided for python 2.7**
+
 - **FIXED:** Fixed compatibility with Django Rest Framework 3.12+
 
 **********
