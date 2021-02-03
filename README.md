@@ -5,7 +5,7 @@ Framework code.
 
 ## Notice
 
-The original [drf-yasg](https://github.com/joellefkowitz/drf-yasg) repository is now maintained again. This repo will be left as is to serve those still using it.
+The original [drf-yasg](https://github.com/axnsan12/drf-yasg) repository is now maintained again. This repo will be left as is to serve those still using it.
 
 Please migrate back to the using the origional repository and for submitting contributions.
 
